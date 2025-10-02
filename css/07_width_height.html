@@ -22,21 +22,15 @@
             1. 인라인
             2. id
             3. class, 가상 class
-            4. 타입, 가상 요소
+            4. 타입, 슈도 요소
             - 같은 선택자이면 아래 기록한 것이 적용
             - 같은 속성일때 아래 기록한 것이 적용
         */
 
-        .div2 {
-            width: 1200px;
-            background-color: rgb(22, 199, 219);
-        }
-
-
         div {
             /* 단위: px은 고정, %는 부모 기준 */
             /* 부모(body) 너비의 50% */
-            width: 50%;
+            /* width: 50%; */
             /* w50p */
             height: 200px;
             /* h200 */
@@ -51,18 +45,24 @@
         }
 
         .div1 {
-            width: 50%;
+            width: 100%;
             /* 최대 너비 */
-            max-width: 1200px; /* maw500 */
+            max-width: 1200px;
+            margin: 0 auto;
+            /* maw500 */
             /* 최소 너비 */
-            /* min-width: 500px; mw500 */
+            min-width: 500px; /* mw500 */
             /* 최대 높이 */
             /* max-height: 500px; mah500 */
             /* 최소 높이 */
             /* min-height: 500px; mh500 */
-            background-color: rgb(15, 109, 122);
+            background-color: rgb(243, 26, 181);
         }
 
+        .div2 {
+            width: 600px;
+            background-color: rgb(150, 212, 16);
+        }
     </style>
 </head>
 
