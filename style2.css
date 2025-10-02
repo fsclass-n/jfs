@@ -1,0 +1,39 @@
+@charset "utf-8"; /* @ch */
+/* CDN(콘텐트 전송 네트워크, Content Delivery Network)은 지리적으로 분산된 서버 네트워크를 통해 웹 콘텐츠(예: 웹사이트, 이미지, 동영상)를 사용자와 가장 가까운 곳에서 전달하여 전송 속도를 높이고, 웹사이트 성능을 향상시키는 기술입니다. */
+/* https://cdnjs.com */
+/* font awesome 소스 코드 */
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css); /* @i */
+
+/* common */
+* {
+    box-sizing: border-box; /* bx */
+}
+
+/* header */
+/* section */
+
+/* card-container */
+/* 배경색: bgc */
+.card-container {
+    width: 340px;
+    background-color: #EDF5F7;
+    /* overflow: hidden; */
+}
+.card-content {
+    /* 상 좌우 하 */
+    padding: 0 45px 120px; /* p0-45 */
+}
+/* 좋아요 하트 */
+.like-button {
+    /* 요소의 크기는 지정하면서 줄은 바뀌지 않는다. */
+    display: inline-block; /* dib */
+    width: 55px; /* w55 */
+    height: 55px; /* h55 */
+    /* line-height: 55px; */ /* lh55px */
+    /* text-align: center; */ /* tac */
+    padding: 16px 18px 24px;
+    border-radius: 50%; /* bdrd */
+    background-color: #B1B4B3; /* bgc */
+}
+
+/* footer */

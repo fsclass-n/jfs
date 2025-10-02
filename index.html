@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>홍길동</title>
     <!-- 외부 스타일: link 태그로 css파일을 연결 -->
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="style2.css">
 </head>
 
 <body>
@@ -40,19 +41,22 @@
 
     <!-- section(본문) area -->
     <!-- https://www.honorsville.co.kr/ -->
+
+    <!-- card-container -->
     <div class="card-container">
+
+        <!-- card-image-wrapper -->
         <div class="card-image-wrapper">
             <img src="https://www.honorsville.co.kr/upload/temp/20255303432444.jpg" alt="충주연수 경남아너스빌 센터원 아파트 외관"
                 class="card-image">
             <!-- <img src="apartment-complex.jpg" alt="충주연수 경남아너스빌 센터원 아파트 외관" class="card-image"> -->
-        </div>
+        </div> <!-- .card-image-wrapper -->
 
+        <!-- card-content -->
         <div class="card-content">
             <div class="card-header">
                 <span class="tag-badge">분양중</span>
-                <!-- 폼 요소: 회원가입, 로그인, 게시판, 상품구매 및 결재 -->
-                <button class="like-button" aria-label="관심 단지로 추가">
-                </button>
+                 <span class="like-button"><i class="fa-solid fa-heart"></i></span>
             </div>
 
             <h2 class="card-title">충주연수 경남아너스빌 센터원</h2>
@@ -64,9 +68,9 @@
 
             <div class="card-contact">
                 <p class="phone-number">1866-0234</p>
-            </div>
-        </div>
-    </div>
+            </div> <!-- .card-contact -->
+        </div> <!-- .card-content -->
+    </div> <!-- .card-container -->
 
     <!-- footer(푸터) area -->
     <footer>
