@@ -67,6 +67,11 @@ body {
 
 /* header */
 /* section */
+#section {
+    display: flex; /* df */
+    /* 현재 주축은 row */
+    justify-content: center; /* jcc */
+}
 
 /* card-container */
 /* 배경색: bgc */
@@ -74,6 +79,7 @@ body {
     width: 340px;
     background-color: #EDF5F7;
     /* overflow: hidden; */
+    margin: 20px;
 }
 
 .card-image-wrapper {
