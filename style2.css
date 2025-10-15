@@ -1,4 +1,6 @@
 @charset "utf-8"; /* @ch */
+@import url(common.css); /* @i */
+
 /* CDN(콘텐트 전송 네트워크, Content Delivery Network)은 지리적으로 분산된 서버 네트워크를 통해 웹 콘텐츠(예: 웹사이트, 이미지, 동영상)를 사용자와 가장 가까운 곳에서 전달하여 전송 속도를 높이고, 웹사이트 성능을 향상시키는 기술입니다. */
 /* https://cdnjs.com */
 /* font awesome 소스 코드 */
@@ -8,14 +10,6 @@
 @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
 /* 구글 */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
-
-/* common */
-* {
-    box-sizing: border-box; /* bx */
-}
-img {
-    vertical-align: top; /* vat */
-}
 
 /* 
     typo/color system    
@@ -74,10 +68,34 @@ body {
 }
 
 /* section1 area */
+/* #sec1 * {
+    outline: 1px solid red;
+} */
 #sec1 .outer {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%; /* h100p */
+}
+#sec1 .container {
+    /* 너비가 100% 이지만, 최대 크기가 1330px */
+    width: 100%; /* w100p */
+    max-width: 1330px; /* maw1330 */
+    /* 인라인 요소(텍스트 포함) 가로 정렬 */
+    text-align: center; /* tac */
+}
+#sec1 .counter {
+    display: flex; /* df */
+    justify-content: center;
+}
+#sec1 .counter div {
+    width: 307px;
+    /* height와 line-height가 같으면 텍스트가 수직 중앙 배치된다. 단, 한 줄 텍스트일때만 가능 */
+    height: 44px;
+    line-height: 44px; /* lh44px */
+    background-color: rgba(255, 217, 0, .6);
+    border-radius: 20px; /* bdrr */
+    margin: 10px;
 }
 
 /* section2 area */
