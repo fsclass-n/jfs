@@ -67,10 +67,18 @@ body {
 
 /* header */
 /* section */
-#section {
+/* section common(공통) */
+.sec {
+    /* vh: viewport height */
+    height: 100vh;
+}
+
+#sec2 {
     display: flex; /* df */
     /* 현재 주축은 row */
     justify-content: center; /* jcc */
+    align-items: center;
+    gap: 20px; /* g20 */
 }
 
 /* card-container */
@@ -79,7 +87,7 @@ body {
     width: 340px;
     background-color: #EDF5F7;
     /* overflow: hidden; */
-    margin: 20px;
+    /* margin: 20px; */
 }
 
 .card-image-wrapper {
