@@ -4,14 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>캐로셀</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .container {
+            position: relative;
+            height: 100vh;
+            background-color: darkgoldenrod;
+        }
+        .nextprev {
+            position: absolute;
+            background-color: lightcoral;
+        }
+        .pagination {
+            position: absolute;
+            /* 
+                함수의 형식:
+                    함수명(인수)
+
+                calc(연산식): 함수(function, 기능)
+                    산술 연산자: +, -, *, /
+                    피연산자: 50%, 23px, ...
+                    주의! 연산자 사이에 공백을 띄운다.
+                translateX(값)
+            */
+            left: 50%;
+            /* margin-left: -23px; */
+            /* left: calc(50% - 23px); */ /* l50p */
+            transform: translateX(-50%);
+            bottom: 40px;
+        }
+
+        .pagination span {
+            display: inline-block; /* dib */
+            width: 8px;
+            height: 8px;
+            margin: 10px;
+            border-radius: 50%; /* bdrr */
+            background-color: #fff;
+            /* span의 내용 숨기기 */
+            text-indent: -9999px; /* ti-9999 */
+        }
+
+        .pagination .active {
+            /* width: 20px;
+            height: 20px; */
+            /* 
+                transform(변형)
+                    - 위치: translate
+                    - 크기: scale
+                    - 회전: rotate
+                    - 기울기: skew
+            */
+            transform: scale(2.5);
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="nextprev">
-
+            <div class="prev_btn">PREV</div>
+            <div class="next_btn">NEXT</div>
         </div>
         <div class="pagination">
-
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
         </div>
     </div>
 </body>
