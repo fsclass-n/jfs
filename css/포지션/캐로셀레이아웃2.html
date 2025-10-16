@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>캐로셀</title>
     <style>
+        /* 1. 폰트어썸 라이브러리 */
+        @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css);
+
         body {
             margin: 0;
         }
@@ -22,8 +25,20 @@
             padding: 0 30px;
             position: relative;
             /* width: 100%; */
+            max-width: 1440px;
+            margin: auto; /* m:a */
             top: 50%;
             transform: translateY(-50%);
+            font-size: 5em;
+            /* a태그는 글자의 색을 상속 받지 않는다. */
+            color:#FF636B;
+        }
+        .nextprev a {
+            /* a태그의 글자 색은 a태그에 직접 지정해야 한다. */
+            color: #fff;
+        }
+        .nextprev a:hover {
+            color:rgba(247, 16, 27, 0.5);
         }
 
         /* pagination 또는 indicator */
@@ -77,9 +92,11 @@
 </head>
 <body>
     <div class="container">
+        <!-- 2. 폰트어썸: 아이콘 -->
+        <!-- https://cdnjs.com -->
         <div class="nextprev">
-            <a href="#" class="prev_btn"><img src="./../../assets/inthree/main-visual-prev.png" alt="이전 버튼"></a>
-            <a href="#" class="next_btn"><img src="./../../assets/inthree/main-visual-next.png" alt="다음 버튼"></a>
+            <a href="#" class="prev_btn"><i class="fa-solid fa-chevron-left"></i></a>
+            <a href="#" class="next_btn"><i class="fa-solid fa-chevron-right"></i></a>
         </div>
         <div class="pagination">
             <span class="active">1</span>
