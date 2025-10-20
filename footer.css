@@ -20,8 +20,14 @@ footer .inquiry {
     /* 배경 이미지 높이: 196px */
     background: #fff url(./assets/footer_img.png) no-repeat 0 100%;
 }
+footer .inquiry .inner {
+    display: flex;
+}
+footer .inquiry .con-area {
+    display: flex;
+}
 footer .inquiry h2 {
-    color: #333;
+    color: #010101;
 }
 footer .inquiry .tel-area a {
     color: #333;
