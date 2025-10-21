@@ -7,12 +7,21 @@
     /* 사용자 정의 폰트명 */
     font-family: Lato-Regular;
     /* 상대주소 */
+    /* 
+        / 작업 영역 폴더(root)
+        ./ 현재위치, 한 번만
+        ../ 부모위치, 여러 번
+        예) a폴더>b폴더>c폴더: 파일.html
+        예) a폴더: ../../이미지.jpg
+    */
+    /* 내 컴퓨터에서는 */
     src: url(/jfs/assets/font/Lato-Regular.ttf);
 }
 @font-face {
     /* 사용자 정의 폰트명 */
     font-family: Lato-Thin;
     /* 절대주소 */
+    /* URL: 프로토콜://도메인/폴더경로/파일 */
     src: url(https://fsclass-n.github.io/jfs/assets/font/Lato-Thin.ttf);
 }
 
