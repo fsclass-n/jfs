@@ -15,7 +15,7 @@
         예) a폴더: ../../이미지.jpg
     */
     /* 내 컴퓨터에서는 */
-    src: url(/jfs/assets/font/Lato-Regular.ttf);
+    src: url(../assets/font/Lato-Regular.ttf);
 }
 @font-face {
     /* 사용자 정의 폰트명 */
@@ -34,22 +34,9 @@ ul {padding: 0; list-style:none;}
 
 /* typography(타이포그래피) */
 body {
-    /* font-family: "Lato-Regular", sans-serif; */
-}
-h2.noto {
-    font-family: "Noto Sans KR", sans-serif;
-    font-weight: 400;
-    font-size: 24px;
-    color: #fff;
-    /* 글자사이 간격: 자간 */
-    letter-spacing: 10px; /* ls */
-    background: #404040;
-    /* 일반적으로 좌우패딩을 상하보다 많이 준다. */
-    padding: 8px 24px 10px 30px;
-    text-transform: uppercase; /* tt */
-}
-h2.lato {
     font-family: "Lato-Regular", sans-serif;
+}
+h2 {
     font-weight: 400;
     font-size: 24px;
     color: #fff;
@@ -64,7 +51,7 @@ h2.lato {
 
 /* common(공통) */
 h2 {
-    position: relative;
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); /* trft */
