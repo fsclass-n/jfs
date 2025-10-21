@@ -7,7 +7,7 @@
     /* 사용자 정의 폰트명 */
     font-family: Lato-Regular;
     /* 상대주소 */
-    src: url(/assets/font/Lato-Regular.ttf);
+    src: url(/jfs/assets/font/Lato-Regular.ttf);
 }
 @font-face {
     /* 사용자 정의 폰트명 */
