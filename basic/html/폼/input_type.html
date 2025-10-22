@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input의 type</title>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif
+        }
+
+        /* 
+            속성 선택자
+                [속성]
+                [속성="값"]
+        */
+
+        [type="checkbox"] {
+            border-radius: 0;
+            /* brdr */
+        }
+
+        /* 커스텀 체크박스 */
+        .custom-checkbox {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .custom-checkbox input {
+            display: none;
+        }
+
+        .custom-checkbox .checkmark {
+            width: 20px;
+            height: 20px;
+            background-color: #eee;
+            border-radius: 6px;
+            /* 여기서 둥글기 조정 가능 */
+            display: inline-block;
+            transition: 0.2s;
+        }
+
+        .custom-checkbox input:checked+.checkmark {
+            background-color: #2196F3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>input의 type 유형</h1>
+    <!-- 크로스 브라우징은 다양한 웹 브라우저와 기기에서 웹사이트가 의도한 대로 동일하게 보이고 작동하도록 만드는 작업입니다. 브라우저마다 렌더링 엔진이 다르기 때문에 웹 표준을 준수하고, 필요에 따라 브라우저별 접두사 사용, CSS 초기화 등의 방법을 통해 모든 환경에서 일관된 사용자 경험을 제공하는 것을 목표로 합니다. -->
+    <!-- 운영체제: 윈도우10(IE11->엣지), MAC OS(사파리), 안드로이드, iOS, ...  -->
+    <!-- 5대 브라우저: 크롬, 파이어폭스, 사파리(5.x), 엣지, 오페라 -->
+    <!-- https://gs.statcounter.com/browser-market-share -->
+    <!-- open in browser: alt+b(기본 브라우저), shift+alt+b(선택한 브라우저) -->
+    <!-- 유효성 검사: 정규식 -->
+    <!-- 입력 상자 -->
+    <form action="">
+        <!-- value: 초기값+전송값 -->
+        text: <input type="text" value="홍길동"><br>
+        password: <input type="password"><br>
+        hidden: <input type="hidden"><br> <!-- 개발자용! -->
+        email: <input type="email"><br>
+        tel: <input type="tel"><br>
+        url: <input type="url"><br>
+        search: <input type="search"><br><br>
+
+        <!-- 버튼 -->
+        <!-- value: 버튼 이름 -->
+        <!-- submit: 데이터 전송 목적으로 사용 -->
+        submit: <input type="submit" value="버튼"><br>
+        <!-- reset: 데이터 초기화 목적으로 사용 -->
+        reset: <input type="reset" value="버튼"><br>
+        <!-- button: 기타 목적으로 사용! -->
+        button: <input type="button" value="버튼"><br>
+        <!-- 파일 업로드 -->
+        file: <input type="file"><br>
+        image: <input type="image" src="./../../assets/imgs/btn.svg" alt="버튼 입니다."><br><br>
+
+        <!-- 라디오 & 체크박스(확인란) -->
+        checkbox: <input type="checkbox"><br>
+        radio: <input type="radio"><br><br>
+
+        <!-- 커스텀 체크박스 -->
+        <label class="custom-checkbox">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label><br><br>
+
+
+
+        <!-- number & range -->
+        number: <input type="number"><br>
+        range: <input type="range"><br><br>
+
+        <!-- 날짜/시간 -->
+        date: <input type="date"><br>
+        datetime-local: <input type="datetime-local"><br>
+        month: <input type="month"><br>
+        time: <input type="time"><br>
+        week: <input type="week"><br><br>
+
+        <!-- 색상 -->
+        color: <input type="color"><br>
+    </form>
+</body>
+
+</html>
