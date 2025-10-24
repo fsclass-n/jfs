@@ -13,7 +13,7 @@
             /* border-collapse: separate; */
             /* border-collapse: collapse; */
             /* border-spacing은 border-collapse가 collapse일때는 적용되지 않는다. */
-            border-spacing: 10px;
+            border-spacing: 10px; /* 기본값: 2px */
         }
 
         th,
@@ -30,6 +30,12 @@
 
         table {
             margin-top: 50px;
+        }
+
+        .table1 {
+            border: 1px solid red;
+            /* border-spacing: 좌우 상하; */
+            border-spacing: 20px 30px;
         }
 
         .table2 {
