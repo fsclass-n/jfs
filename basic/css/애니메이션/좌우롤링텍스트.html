@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>좌우 롤링 텍스트</title>
+    <style>
+        /* 초기화 */
+        body {
+            margin: 0;
+        }
+        
+        /* 롤링 텍스트 */
+        .marquee {
+            font: 90px 'FuturaStdBook';
+            font-weight: bold;
+            letter-spacing: 12px;
+            border: 10px solid red;
+
+            white-space: nowrap; /* 텍스트 줄바꿈x */
+            overflow:hidden;
+        }
+        .marquee .inner {
+            display: flex;
+        }
+        .marquee .inner span {
+            padding-right: 50px;
+            animation: rolltxt 15s linear infinite;
+        }
+        @keyframes rolltxt {
+            0% {transform: translateX(0);}
+            100% {transform: translateX(-100%);}
+        }
+
+        .marquee .right span {
+            animation-direction: reverse;
+        }
+
+        /* span:nth-of-type(1) {background: lightblue;}
+        span:nth-of-type(2) {background: lightcoral;} */
+    </style>
+</head>
+<body>
+    <div class="marquee">
+        <div class="inner">
+            <span>PRESTIGE ● CONSIDERATION ● AFFINITY</span>
+            <span>PRESTIGE ● CONSIDERATION ● AFFINITY</span>
+        </div>
+        <div class="inner right">
+            <span>PRESTIGE ● CONSIDERATION ● AFFINITY</span>
+            <span>PRESTIGE ● CONSIDERATION ● AFFINITY</span>
+        </div>
+    </div>
+</body>
+</html>
