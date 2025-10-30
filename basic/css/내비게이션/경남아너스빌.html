@@ -16,24 +16,39 @@
         /* 공통 */
         body {
             font: 1.5rem/1.6 'NanumSquare';
+            background: #366cc9;
         }
 
 
         /* 헤더 */
         #header {
-            padding: 0 50px;
             background: #0F2244;
+            overflow: hidden;
         }
+        #header::after {
+            content: '';
+            color: #fff;
+            display: block;
+            width: 100%;
+            height: 0;
+            background: #fff;
+            transition: .5s;
+        }
+
+        #header:hover::after {
+            height: 200px;
+        }
+
         #header a {
             color: #fff;
         }
         .container {
             position: relative;
+            padding: 0 50px;
             height: 95px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            /* background: lightcoral; */
         }
 
         /* 로고 */
@@ -49,22 +64,47 @@
 
         /* 1depth: Main Menu */
         .main {
-            width:550px;
+            width:600px;
             display: flex;
-            justify-content: space-between;
-            /* background: lightblue; */
             text-align: center;
             font-size: 1.8rem;
             font-weight: 700;
         }
+        .main li {
+            width: 150px;
+        }
+
+        /* 메인 메뉴 하단 바 */
+        .main>li>a {
+            display: inline-block;
+        }
+
+        .main>li>a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #bbb;
+            /* margin: auto; */
+            /* border-bottom: 3px solid red; */
+            /* transform: scaleX(0); */
+            transition: .3s;
+        }
+        .main li a:hover::after {
+            /* transform: scaleX(1); */
+            width: 100%;
+        }
+        #header .main a:hover {
+            color: #bbb;
+        }
 
         /* 2depth: Sub Menu */
         .sub {
-            /* display: none; */
             font-size: 1.6rem;
             line-height: 2;
             font-weight: 400;
             margin-top: 45px;
+            background: #fff;
         }
         /* a태그 글자색은 반드시 a태그에 직접 지정한다. */
         #header .sub a {
