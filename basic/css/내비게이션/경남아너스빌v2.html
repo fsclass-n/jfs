@@ -23,9 +23,10 @@
         /* 헤더 */
         #header {
             background: #0F2244;
-            overflow: hidden;
+            /* overflow: hidden; */
         }
-        #header::after {
+        /* 서브 메뉴 영역 */
+        /* #header::after {
             content: '';
             color: #fff;
             display: block;
@@ -37,7 +38,7 @@
 
         #header:hover::after {
             height: 200px;
-        }
+        } */
 
         #header a {
             color: #fff;
@@ -102,14 +103,24 @@
         #header .main a:hover {
             color: #bbb;
         }
+        #header .main>li:hover .sub {
+            height: 200px;
+            visibility: visible; /* vv */
+            opacity: 1;
+        }
 
         /* 2depth: Sub Menu */
         .sub {
             font-size: 1.6rem;
             line-height: 2;
             font-weight: 400;
+            padding-top: 20px;
             margin-top: 45px;
             background: #fff;
+            height: 0;
+            opacity:0;
+            visibility: hidden;
+            transition: .3s;
         }
         /* a태그 글자색은 반드시 a태그에 직접 지정한다. */
         #header .sub a {
