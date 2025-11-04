@@ -1,30 +1,89 @@
 // 디지털 시계, clock.js
 
+// 선언적 함수
+/* 
+    function 함수명(){
+        코드;
+    }
+*/
 function digitalClock() {
 
     // 변수 선언
+    // const: 재선언과 재할당 모두 불가!
+    // const: 선언하면서 할당도 바로해야함!
+    // let: 재선언 불가, 재할당 가능
+    // new Date(): 날짜와 시간 객체(인스턴스)
     const date = new Date();
+    console.log(new Date()); // Tue Nov 04 2025 14:26:07 GMT+0900 (한국 표준시)
+    // document: 문서 객체
+    // getElementById('아이디'): 메서드(매개변수, ...)
     const clockBox = document.getElementById('clock');
     let day; // 요일을 담을 변수
-    let clock;
+    let clock; // 출력 변수
 
     // 처리
-    if (date.getDay() === 0) {
-        day = '일';
-    } else if (date.getDay() === 1) {
-        day = '월';
-    } else if (date.getDay() === 2) {
-        day = '화';
-    } else if (date.getDay() === 3) {
-        day = '수';
-    } else if (date.getDay() === 4) {
-        day = '목';
-    } else if (date.getDay() === 5) {
-        day = '금';
-    } else if (date.getDay() === 6) {
-        day = '토';
+    // if (date.getDay() === 0) { // getDay(): 요일을 숫자로, 일(0)~토(6)
+    //     day = '일';
+    // } else if (date.getDay() === 1) {
+    //     day = '월';
+    // } else if (date.getDay() === 2) {
+    //     day = '화';
+    // } else if (date.getDay() === 3) {
+    //     day = '수';
+    // } else if (date.getDay() === 4) {
+    //     day = '목';
+    // } else if (date.getDay() === 5) {
+    //     day = '금';
+    // } else if (date.getDay() === 6) {
+    //     day = '토';
+    // }
+    // } else {
+    //     day = '토';
+    // }
+    // switch~case 문으로 변경
+    // 요일: 숫자에서 문자열로 변경
+    switch (date.getDay()) {
+        case 0: day = '일'; break;
+        case 1: day = '월'; break;
+        case 2: day = '화'; break;
+        case 3: day = '수'; break;
+        case 4: day = '목'; break;
+        case 5: day = '금'; break;
+        default: day = '토';
     }
 
+    // 시간 
+    let hour = date.getHours(); // 시
+    let minute = date.getMinutes(); // 분
+    let second = date.getSeconds(); // 초
+
+    // AM/PM: 3항 연산자 사용하기
+    const ampm = hour >= 12 ? 'PM' : 'AM';
+    // 0시는 12시로 표시
+    hour = hour % 12;
+    // 0~11까지는 나머지가 0~11
+    // 12~23까지는 나머지가 0~11
+    hour = hour ? hour : 12;
+
+    // 두 자리 맞추기: 0~9, 10부터는 2자리
+    // 시간
+    if (hour < 10) {
+        hour = '0' + hour;
+    } else {
+        hour = hour;
+    }
+    // 분
+    if (minute < 10) {
+        minute = '0' + minute;
+    } else {
+        minute = minute;
+    }
+    // 초
+    if (second < 10) {
+        second = '0' + second;
+    } else {
+        second = second;
+    }
 
     // 출력
     clock = 
@@ -32,9 +91,9 @@ function digitalClock() {
         (date.getMonth() + 1) + '월 ' +
         date.getDate() + '일 ' +
         '(' + day + ') ' +
-        date.getHours() + ':' +
-        date.getMinutes() + ':' +
-        date.getSeconds();
+        ampm + hour + ':' +
+        minute + ':' +
+        second;
     
 
     clockBox.innerHTML = clock;
