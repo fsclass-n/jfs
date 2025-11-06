@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS overflow 속성</title>
+    <style>
+        /* 
+            overflow: 요소의 넘치는 콘텐츠 처리 방식
+                1) visible
+                    - 기본값, 오버플로는 잘리지 않습니다. 
+                    - 콘텐츠는 요소의 상자 밖으로 렌더링됩니다.
+                2) hidden
+                    - 오버플로는 잘리고 나머지 콘텐츠는 숨겨집니다.
+                3) scroll: 
+                    - 스크롤바가 추가되었습니다. 
+                    - 사용자는 모든 콘텐츠를 보려면 스크롤해야 합니다.
+                4) auto 
+                    - scroll와 유사 하지만 
+                    - 콘텐츠가 박스보다 많아 넘치면 스크롤바가 생성되고 아니면 스크롤바를 숨긴다.
+                5) clip (ver.CSS3)
+                    - 오버플로는 잘리고 나머지 콘텐츠는 숨겨집니다.
+
+            overflow-x: 가로 스크롤
+            overflow-y: 세로 스크롤
+        */
+        .wrap {
+            display: flex;
+            gap: 30px;
+        }
+
+        .wrap div {
+            width: 300px;
+            height: 150px;
+            background-color: coral;
+        }
+        .div1 {overflow: visible;} /* o:v 기본값 */
+        .div2 {overflow: hidden;} /* o */
+        .div3 {overflow: scroll;} /* o:s */
+        .div8 {
+            overflow: scroll; 
+            overflow-x: hidden; /* ox */
+        } 
+        .div9 {
+            overflow: scroll; 
+            overflow-y: hidden; /* oy */
+            white-space: nowrap; /* wh */
+        } 
+        .div4 {overflow: auto;} /* o:a */
+        .div6 {overflow: scroll;} /* o:s */
+        .div7 {overflow: auto;} /* o:a */
+        .div5 {overflow: clip;}
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="div1">visible Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa pariatur eligendi reiciendis aspernatur sequi? Eius similique, perspiciatis molestias, repellat aspernatur itaque consequuntur doloribus quam maiores, voluptate placeat possimus quisquam iusto? Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, sed beatae eius, similique blanditiis labore nam non aliquam reiciendis eveniet reprehenderit magni quibusdam cumque consectetur error? Ea ipsam explicabo iure?</div>
+        <div class="div2">hidden Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laboriosam a nostrum consequuntur cum, qui accusamus optio nemo quae officiis? Minima, culpa officia amet quasi inventore numquam ea iure excepturi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit ex aut quam asperiores repudiandae sapiente illo quod recusandae esse quidem. Officia, accusamus. Maxime pariatur nesciunt doloribus perspiciatis suscipit harum iure.</div>
+        <div class="div3">scroll Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique perferendis quod ratione nobis libero magnam eos neque repudiandae dolore exercitationem in veritatis voluptas, quibusdam praesentium. Unde facilis placeat officia laudantium? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio aliquam quod iste libero impedit aut suscipit. Veniam ab rerum ex consectetur nam, numquam modi recusandae perspiciatis, quisquam inventore repellendus quaerat.</div>
+        <div class="div8">scroll Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique perferendis quod ratione nobis libero magnam eos neque repudiandae dolore exercitationem in veritatis voluptas, quibusdam praesentium. Unde facilis placeat officia laudantium? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio aliquam quod iste libero impedit aut suscipit. Veniam ab rerum ex consectetur nam, numquam modi recusandae perspiciatis, quisquam inventore repellendus quaerat.</div>
+        <div class="div9">scroll Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique perferendis quod ratione nobis libero magnam eos neque repudiandae dolore exercitationem in veritatis voluptas, quibusdam praesentium. Unde facilis placeat officia laudantium? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio aliquam quod iste libero impedit aut suscipit. Veniam ab rerum ex consectetur nam, numquam modi recusandae perspiciatis, quisquam inventore repellendus quaerat.</div>
+        <div class="div4">auto Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora temporibus earum animi quisquam voluptas aliquid quaerat ea excepturi vitae aspernatur. Reiciendis ipsa dolorum, aspernatur nulla nostrum dolore asperiores repudiandae mollitia? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea placeat quaerat qui magnam quidem voluptate magni eveniet officiis iusto culpa voluptates sequi sit sint ipsam ex molestiae commodi, illum officia.</div>
+        <div class="div5">clip Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis nemo, architecto praesentium, esse ipsam saepe similique ullam, voluptate non harum ratione deserunt ex? Excepturi modi possimus ut mollitia unde provident? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, commodi accusantium autem repellat, pariatur eum delectus quo aut atque tempora maiores. Deserunt possimus doloribus eius dignissimos debitis quasi aspernatur vero?</div>
+        <div class="div6">clip Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis nemo, architecto praesentium?</div>
+        <div class="div7">clip Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis nemo, architecto praesentium?</div>
+    </div>
+</body>
+
+</html>
