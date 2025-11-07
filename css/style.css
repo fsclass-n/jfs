@@ -221,8 +221,25 @@ footer .top-btn i {
 #about .basic p {
     text-align: left;
 }
+#about .basic strong {
+    text-decoration: underline 2px wavy rgba(255,0,0,0.5);
+}
+#about .basic b {
+    display: inline-block;
+    padding-bottom: 36px;
+}
+#about .basic img {
+    height: 280px;
+    border-radius: 5px;
+    filter: opacity(50%);
+}
+#about .basic img:hover {
+    filter: none; 
+}
 #about .basic .inner {
     display: flex;
+    gap: 48px;
+    margin:48px 0 130px;
 }
 #about .basic .inner div {
     flex: 50%;
@@ -232,8 +249,14 @@ footer .top-btn i {
 }
 
 /* skill area */
+#about .skill > p {
+    margin-bottom: 36px;
+    font-size: 1.8rem;
+}
 #about .skill .inner p {
     text-align: left; /* ta */
+    letter-spacing: 1rem;
+    margin: 12px 0;
 }
 #about .progressbar {
     background: #F1F1F1;
@@ -257,9 +280,9 @@ footer .top-btn i {
 #about .count ul {
     display: flex;
     text-align: center;
-    height: 135px;
     background: #616161;
     color: #fff;
+    padding: 36px 0;
 }
 #about .count ul li {
     /* flex: [grow|shrink|basis]; */
