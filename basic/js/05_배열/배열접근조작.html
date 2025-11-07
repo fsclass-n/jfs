@@ -28,6 +28,7 @@
             nums[99] = 100;
         */
         function insertFn() {
+            // 배열에 1~100까지 값을 추가
             for (let i = 0; i < 100; i++) {
                 nums[i] = i + 1;
             }
@@ -36,16 +37,20 @@
         // 조회
         function selectFn() {
             insertFn();
-            document.write(nums + '<br>');
+            // 1~100까지 숫자를 출력
+            for (let i=0; i<nums.length; i++) {
+                document.write(nums[i] + ' ');
+            }
         }
 
         function addFn() {
             selectFn();
             let sum = 0;
             for (let i = 0; i <= 100; i++) {
+                // 1~100까지 합을 sum에 입력
                 sum += i;
             }
-            document.write(sum);
+            document.write(`1부터 100까지 합은 ${sum} 입니다.`);
             document.write('<br><a href="배열접근조작.html">새로고침</a>')
         }
 
