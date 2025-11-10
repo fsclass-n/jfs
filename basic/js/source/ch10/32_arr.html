@@ -6,10 +6,10 @@
 <body>
     <script>
         var kdata=['서울', '부산', '청주', '대구']; 
-        function printArr(item, index) {
+        
+        kdata.forEach(function (item, index) {
             document.write("배열 데이터 [" + index + "] : " + item + "<br>");
-        }
-        kdata.forEach(printArr);
+        });
     </script> 
 </body>
 </html>
