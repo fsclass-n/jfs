@@ -217,7 +217,11 @@ footer .top-btn i {
     }
 }
 
-/* about section area */
+/* about section area: about.html */
+#about .parallax-bg {
+    background-image: url(/jfs/assets/img/bg-about.jpg);
+    background-position: 50% 70%;
+}
 #about .basic p {
     text-align: left;
 }
@@ -293,7 +297,7 @@ footer .top-btn i {
     font-size: 2.4rem;
 }
 
-/* work + contact section common area */
+/* about ~ contact section common area */
 .parallax-bg {
     position: relative;
     height: 400px;
@@ -342,6 +346,7 @@ button {
 /* contact section area: contact.html */
 #contact .parallax-bg {
     background-image: url(/jfs/assets/img/parallax3.jpg);
+    background-position: 50% 100%;
 }
 #contact .container {
     display: flex;
@@ -357,6 +362,7 @@ button {
 }
 #contact .contact {
     width: 600px;
+    text-align: left; /* ta */
 }
 #contact .contact p {
     margin: 24px 0 16px;
