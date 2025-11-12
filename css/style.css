@@ -187,10 +187,18 @@ footer .top-btn i {
 #home {
     position: relative;
     /* 뷰포트 크기로 높이 지정 */
-    height: 100vh;
     overflow: hidden;
-    background: url(/jfs/assets/img/marita-kavelashvili-ugnrXk1129g-unsplash.jpg)
-        no-repeat 50% 50% / cover fixed;
+}
+#home .bgimg {
+    height: 100vh;
+    background: url(/jfs/assets/img/light.jpg) no-repeat 50% 50% / cover fixed;
+}
+#home.dark .bgimg {
+    filter: brightness(40%);
+    background-image: url(/jfs/assets/img/dark.jpg);
+}
+#home.dark h2 {
+    text-shadow: 1px 1px 5px red, 0 0 25px red, 0 0 35px red;
 }
 #home h2 {
     /* background: #555; */
@@ -200,6 +208,7 @@ footer .top-btn i {
 
 .circle_ani {
     position: absolute;
+    top: 0;
     right: 0;
     width: 135px;
     height: 136px;
@@ -226,7 +235,7 @@ footer .top-btn i {
     text-align: left;
 }
 #about .basic strong {
-    text-decoration: underline 2px wavy rgba(255,0,0,0.5);
+    text-decoration: underline 2px wavy rgba(255, 0, 0, 0.5);
 }
 #about .basic b {
     display: inline-block;
@@ -238,12 +247,12 @@ footer .top-btn i {
     filter: opacity(50%);
 }
 #about .basic img:hover {
-    filter: none; 
+    filter: none;
 }
 #about .basic .inner {
     display: flex;
     gap: 48px;
-    margin:48px 0 130px;
+    margin: 48px 0 130px;
 }
 #about .basic .inner div {
     flex: 50%;
@@ -263,7 +272,7 @@ footer .top-btn i {
     margin: 12px 0;
 }
 #about .progressbar {
-    background: #F1F1F1;
+    background: #f1f1f1;
     color: #fff;
 }
 #about .progressbar div {
@@ -274,10 +283,10 @@ footer .top-btn i {
     background: #616161;
 }
 #about .progressbar:nth-of-type(1) div {
-        width: 85%;
+    width: 85%;
 }
 #about .progressbar:nth-of-type(2) div {
-        width: 95%;
+    width: 95%;
 }
 
 /* count ara */

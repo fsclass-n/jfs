@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,19 +34,37 @@
             background: lightblue;
         }
 
+        /* orientation: portrait (세로) */
+        /* orientation: landscape (가로) */
+        /* 최대 767px -> 767px 이하의 장치 중 + 가로 방향 */
+        @media (max-width: 767px) and (orientation: landscape) {
+            body {
+                background: lightseagreen;
+            }
+        }
+
         /* 최소 768px -> 768px 이상의 장치: 테블릿(768px), 데스크탑(1920px) */
         @media (min-width: 768px) {
+
             /* CSS 기록 */
-            body {background: lightcoral;}
+            body {
+                background: lightcoral;
+            }
         }
+
         /* 최소 1024px -> 1024px 이상의 장치: 데스크탑 */
         @media (min-width: 1024px) {
+
             /* CSS 기록 */
-            body {background: lightgoldenrodyellow;}
+            body {
+                background: lightgoldenrodyellow;
+            }
         }
     </style>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
