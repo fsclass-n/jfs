@@ -1,32 +1,17 @@
 @charset "utf-8";
+/* 웹 폰트 지정 */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css");
-/* 웹 폰트: 방법I - CDN */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
-
-/* 웹 폰트: 방법II - @font-face -> CDN❌ */
 @font-face {
-    /* 사용자 정의 폰트명 */
     font-family: Lato-Regular;
-    /* 상대주소 */
-    /* 
-        / 작업 영역 폴더(root)
-        ./ 현재위치, 한 번만
-        ../ 부모위치, 여러 번
-        예) a폴더>b폴더>c폴더: 파일.html
-        예) a폴더: ../../이미지.jpg
-    */
-    /* 내 컴퓨터에서는 */
     src: url(../assets/font/Lato-Regular.ttf);
 }
 @font-face {
-    /* 사용자 정의 폰트명 */
     font-family: Lato-Thin;
-    /* 절대주소 */
-    /* URL: 프로토콜://도메인/폴더경로/파일 */
     src: url(https://fsclass-n.github.io/jfs/assets/font/Lato-Thin.ttf);
 }
 
-/* reset(초기화) */
+/* 초기화 */
 * {
     box-sizing: border-box;
 }
@@ -66,16 +51,11 @@ button:hover {
     background: #ccc;
 }
 
-/* typography(타이포그래피) */
-/* :root는 html태그를 선택한다. */
+/* 폰트 설정 */
 :root {
     font-size: 10px;
 }
 body {
-    /* 
-        단위: rem은 :root에서 지정한 크기의 배수
-        예) 10px * 1.5배 -> 15px
-    */
     font: 1.5rem/1.6 "Lato-Regular", sans-serif;
     color: #777;
 }
@@ -190,7 +170,7 @@ footer .top-btn i {
     background: no-repeat 50% 50% / cover fixed;
 }
 .container {
-    width: 900px;
+    max-width: 900px;
     margin: 48px auto 96px;
     text-align: center;
 }
@@ -211,7 +191,7 @@ button {
     gap: 16px;
 }
 #work .portfolio li {
-    width: 213px;
+    flex: 25%;
     height: 162px;
 }
 #shadow {
@@ -232,22 +212,62 @@ button {
 
 /* 최대 1024px -> 1024px 이하의 장치: 테블릿(768px), 폰(360px) */
 @media (max-width: 1024px) {
+    body {
+        /* 뷰포트 단위: vw, vh, vmax, vmin */
+        font-size: 2vw;
+    }
+    h2 {
+        font-size: 6vw;
+    }
+    h3 {
+        font-size: 4vw;
+    }
+    button {
+        font-size: 2.5vw;
+    }
+    .top-btn {
+        font-size: 2.5vw;
+    }
+    footer .sns a i {
+        font-size: 4vw;
+    }
+    /* .container {
+        width: 100%;
+    } */
     #work .portfolio {
-        display: flex;
         flex-wrap: wrap;
-        gap: 16px;
         padding: 0 24px;
     }
     #work .portfolio li {
-        flex: 40%;
-        /* width: 50%; */
-        height: auto;
+        flex: 48%;
+        height: 240px;
     }
 }
-/* 최대 768px -> 768px 이하의 장치: 폰(360px) */
-@media (max-width: 768px) {
-    /* CSS 기록 */
+/* 최대 767px -> 767px 이하의 장치: 폰(360px) */
+@media (max-width: 767px) {
     body {
-        background: lightgoldenrodyellow;
+        /* 뷰포트 단위: vw, vh, vmax, vmin */
+        font-size: 3.5vw;
+    }
+    h2 {
+        font-size: 10vw;
+    }
+    h3 {
+        font-size: 7vw;
+    }
+    button {
+        font-size: 4vw;
+    }
+    .top-btn {
+        font-size: 4.5vw;
+    }
+    footer .sns a i {
+        font-size: 6.5vw;
+    }
+    footer {
+        padding: 100px 0px;
+    }
+    #work .portfolio li {
+        flex: 100%;
     }
 }
