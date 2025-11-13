@@ -8,8 +8,8 @@
 </head>
 
 <body>
-    <button>한국어</button>
-    <button>영어</button>
+    <button>언어</button>
+    <!-- <button>영어</button> -->
     <div id="car_list">결과 출력</div>
     <script>
         /* 
@@ -45,12 +45,22 @@
         // 이벤트
         // 객체.메서드('이벤트명', 콜백함수);
         // 객체.addEventListener('click', function(){});
+        let state = 0; // 0이면 한글, 1이면 영문
+        kor_btn.textContent = "English로 바꾸기";
         kor_btn.addEventListener('click', function(){
-            carFn(0);
+            if (state === 1) {
+                carFn(0); // 한글판
+                state = 0;
+                kor_btn.textContent = "English로 바꾸기";
+            } else {
+                carFn(1); // 영문판
+                state = 1;
+                kor_btn.textContent = "Korean로 바꾸기";
+            }
         });
-        eng_btn.addEventListener('click', function(){
-            carFn(1);
-        });
+        // eng_btn.addEventListener('click', function(){
+        //     carFn(1);
+        // });
 
     </script>
 </body>
