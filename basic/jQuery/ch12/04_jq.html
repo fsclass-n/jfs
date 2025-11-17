@@ -6,6 +6,8 @@
         var n=0;
         $(document).ready(function() {
             $("div.out").mouseenter(function() {
+                // textContent() -> text()
+                // innerHTML() -> html()
                 $("p:first", this).text("마우스 포인트 들어옴");
                 $("p:last", this).text(++n);
             });
