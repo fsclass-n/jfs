@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 효과메서드</title>
+    <style>
+        .moving {
+            border: 1px solid #000000;
+            margin: 20px auto 0 auto;
+            text-align: right;
+            width: 1000px;
+        }
+
+        .moving img {
+            cursor: pointer;
+            position: relative;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+        $(()=>{
+            // 변수 선언
+            const img = $('img');
+            // 이미지 가로 크기를 150으로 지정(set)
+            // <img src="이미지" width="150">
+            const imgObj = $('img').width(150); 
+            const imgWidth = imgObj.width();
+            // .moving 박스 가로 크기를 가져오기(get)
+            const boxWidth = $('.moving').width();
+            console.log(imgWidth);
+            console.log(boxWidth);
+
+            function move(e, speed){
+                // 이미지가 왼쪽으로 움직임
+                $(e.currentTarget).animate({left: -boxWidth+imgWidth.width()}, speed);
+            }
+
+            // 이미지를 클릭하면
+            img.eq(0).on('click', e => move(e, 1000));
+            img.eq(1).on('click', e => move(e, 800));
+            img.eq(2).on('click', e => move(e, 2000));
+
+            // 버튼(초기화)을 클릭하면
+            $('button').on('click',()=>{
+                // 이미지가 제자리로 돌아감(오른쪽으로 움직임)
+                $('img').animate({left: 0});
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="init">
+        <button type="button">초기화</button><br>
+    </div>
+    <div class="moving">
+        <img src="https://marketplace.canva.com/bpcg0/MAG0W8bpcg0/1/tl/canva-cute-cartoon-penguin-waving-illustration-MAG0W8bpcg0.png" alt="이미지1"><br>
+        <img src="https://w7.pngwing.com/pngs/344/61/png-transparent-paw-patrol-illustration-puppy-dog-patrol-television-show-iron-on-paw-patrol-television-animals-party-thumbnail.png" alt="이미지2"><br>
+        <img src="https://w7.pngwing.com/pngs/606/121/png-transparent-paw-patrol-everest-illustration-the-new-pup-police-officer-birthday-siberian-husky-paw-patrol-chase-fictional-character-material-party-thumbnail.png" alt="이미지3"><br>
+    </div>
+</body>
+
+</html>
