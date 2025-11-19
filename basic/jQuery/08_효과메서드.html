@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 효과메서드</title>
+    <style>
+        .css_pic {
+            height: 430px;
+            text-align: center;
+        }
+
+        .css_pic img {
+            width: 250px;
+        }
+    </style>
+    <!-- 제이쿼리 라이브러리 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- 제이쿼리 UI 라이브러리 -->
+    <!-- animate() 메서드 사용시 색과 가속도를 사용 가능하게 한다. -->
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"></script>
+    <script>
+        /* 
+            효과 메서드
+                - speed: 400 (기본값, 단위: ms) 
+                        - "slow", "fast", or milliseconds
+                - callback(콜백함수):
+                        효과 메서드가 끝나면 수행할 함수
+
+                // 나타남/사라짐
+                $('선택자').hide([속도],[가속도],[함수]);
+                $(selector).show([speed],[easing],[callback]);
+                $(selector).toggle([speed],[easing],[callback]);
+                
+                // 서서히 나타남/사라짐
+                $(selector).fadeIn([speed],[easing],[callback]); // 나타남(0->1)
+                $(selector).fadeOut([speed],[easing],[callback]); // 사라짐(1->0)
+                $(selector).fadeToggle([speed],[easing],[callback]);
+                $(selector).fadeTo(speed,opacity,[easing],[callback]);
+                    - opacity: 0~1 사이 값
+
+                // 슬라이드되면서 나타남/사라짐
+                $(selector).slideDown([speed],[easing],[callback]); // 나타남(위->아래)
+                $(selector).slideUp([speed],[easing],[callback]); // 사라짐(아래->위)
+                $(selector).slideToggle([speed],[easing],[callback]); // 번갈아
+
+                // 애니메이션
+                $(selector).animate({styles},[speed],[easing],[callback]);
+                    {styles} -> {CSS속성: 값, ...}
+                    easing: swing(기본값, 가속), linear(등속)
+                        -> 제이쿼리 UI를 설정하면 더 많은 easing 값을 사용 가능!
+
+                // 애니메이션 중지
+                $(selector).stop([clearQueue], [jumpToEnd]).애니메이션관련메서드();
+                $(selector).stop(false, false) -> 기본값
+                $(selector).stop() -> 기본값
+                    - clearQueue: false(기본값), true(큐에 쌓여 있는 애니메이션까지 모두 삭제)
+                    - jumpToEnd: false(기본값), true(현재 애니메이션을 마지막 상태로 즉시 이동)
+
+
+                // HTML/CSS 메서드
+                    css("속성"); // 속성 값을 가져오기
+                    css("속성","값"); // 속성 값으로 지정하기
+                    css({params});
+                    css({"속성":"값","속성":"값",...}); // 하나 이상의 속성 값 지정
+                        -> speed가 없다.
+
+                    animate({"속성":"값","속성":"값",...}); // 하나 이상의 속성 값으로 애니메이션
+                        -> speed(기본값: 400)가 있어서 애니메이션 된다.
+                        -> 일부 속성은 사용 불가(예, 변형x 등)
+                        -> 숫자가 아닌 값 / 복잡한 문자열 / 함수 기반 값은 사용할 수 없음.
+
+        */
+
+
+        $(() => {
+            // 버튼을 클릭하면
+            function imgWidth(w) {
+                // 펭귄의 가로 크기를 100으로 지정
+                $('img').animate({width: w * 100});
+            }
+
+            // on('이벤트', 함수) 메서드를 사용한 이벤트 처리
+            $('button').eq(0).on('click', ()=>{
+                imgWidth(1);
+            });
+            // 이벤트 메서드를 이용한 이벤트 처리
+            $('button').eq(1).click(function(){
+                imgWidth(2);
+            });
+            $('button').eq(2).click(function(){
+                imgWidth(3);
+            });
+
+            // 축소 버튼을 클릭하면
+            $('button').eq(4).on('click',()=>{
+                // 이미지의 크기는 100으로, 위치는 아래로 이동
+                $('img').css({position: 'relative'}).stop().animate({
+                    width: 100,
+                    top: 300
+                }, 2000, 'easeOutBounce');
+            })
+            // 확대 버튼을 클릭하면
+            $('button').eq(3).on('click',()=>{
+                // 크기는 원래 크기로(494)로, 위치는 원래 위치로
+                $('img').css({position: 'relative'}).stop().animate({
+                    width: 250,
+                    top: 0
+                });
+            })
+
+            // hide, show, toggle
+            // 속도: 400(기본값, 0.4초)
+            //  - slow(600), fast(200) 
+            // hide 버튼을 누르면 펭귄 hide
+            $('button').eq(5).on('click', ()=>{
+                $('img').hide('slow');
+            });
+            // show 버튼을 클릭하면 펭귄 show
+            $('button').eq(6).on('click', ()=>{
+                $('img').show('fast');
+            });
+            // toggle 버튼을 클릭하면 펭귄 hide/show 번갈아
+            $('button').eq(7).on('click', ()=>{
+                $('img').toggle(200);
+            });
+
+            //////////////페이드 효과///////////////
+            // fadeIn: 서서히 나타남
+            // fadeOut: 서서히 사라짐
+            // fadeToggle: 서서히 나타남/사라짐 번갈아
+            // fadeTo: 불투명도 지정
+
+            // 버튼을 클릭하면
+            $('button').eq(8).on('click', ()=>{
+                // 펭귄이 서서히 나타남
+                $('img').fadeIn();
+            });
+            $('button').eq(9).on('click', ()=>{
+                // 펭귄이 서서히 사라짐
+                $('img').fadeOut();
+            });
+            $('button').eq(10).on('click', ()=>{
+                $('img').fadeToggle();
+            });
+            $('button').eq(11).on('click', ()=>{
+                $('img').fadeTo(200, 0.5);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="css_pic">버튼을 누르면 그림의 크기가 바뀝니다.</p>
+        <div>
+            <button type="button">0가로 100픽셀</button>
+            <button type="button">1가로 200픽셀</button>
+            <button type="button">2가로 300픽셀</button>
+
+            <button type="button">3확대+위치</button>
+            <button type="button">4축소+위치</button>
+
+            <button type="button">5hide</button>
+            <button type="button">6show</button>
+            <button type="button">7toggle</button>
+
+            <button type="button">8fadeIn</button>
+            <button type="button">9fadeOut</button>
+            <button type="button">10fadeToggle</button>
+            <button type="button">11fadeTo</button>
+        </div>
+        <img src="https://marketplace.canva.com/bpcg0/MAG0W8bpcg0/1/tl/canva-cute-cartoon-penguin-waving-illustration-MAG0W8bpcg0.png"
+            alt="펭퀸 1마리">
+    </div>
+</body>
+
+</html>
