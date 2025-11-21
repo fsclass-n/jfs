@@ -17,10 +17,10 @@
 
 <body>
     <!-- header -->
-    <header id="header" class="container-fluid p-0">
-        <nav class="navbar navbar-expand-sm bg-light fixed-top">
+    <header id="header" class="container-fluid p-0 fixed-top">
+        <nav class="navbar navbar-expand-sm">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#home">Home</a>
+                <a class="navbar-brand text-danger" href="#home">Home</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
@@ -68,7 +68,7 @@
                     <div class="col text-center">
                         <b class="d-block mb-5">홍길동</b>
                         <div class="myimg"><img class="w-100 h-100 object-fit-cover"
-                                src="/jfs/assets/img/avatar_hat.jpg" alt="나"></div>
+                                src="assets/img/avatar_hat.jpg" alt="나"></div>
                     </div>
                     <p class="col ele-hide">Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do
                         eiusmod tempor
@@ -97,7 +97,7 @@
         </div><!-- .container -->
 
         <!-- counter -->
-        <div class="container-fluid bg-secondary count py-5">
+        <div id="counter" class="container-fluid bg-secondary count py-5">
             <ul class="row text-center py-2 list-unstyled">
                 <li class="col text-white"><span class="fs-2 d-block">3+</span>Partners</li>
                 <li class="col text-white"><span class="fs-2 d-block">3+</span>Projects Done</li>
@@ -117,17 +117,17 @@
         <div class="container">
             <ul class="row portfolio list-unstyled">
                 <li class="col motion position-relative"><a href="#"><img class="w-100 h-100 object-fit-cover"
-                            src="/jfs/assets/img/p1.jpg" alt="팀 작품(필수)"></a></li>
-                <li class="col motion position-relative"><a href="/jfs/project" target="_blank"><img
-                            class="w-100 h-100 object-fit-cover" src="/jfs/assets/img/project2_thumb.png"
+                            src="assets/img/p1.jpg" alt="팀 작품(필수)"></a></li>
+                <li class="col motion position-relative"><a href="project" target="_blank"><img
+                            class="w-100 h-100 object-fit-cover" src="assets/img/project2_thumb.png"
                             alt="개인 따라하기 작품"></a></li>
                 <li class="col motion position-relative"><a href="#"><img class="w-100 h-100 object-fit-cover"
-                            src="/jfs/assets/img/p3.jpg" alt="개인 스스로 작품"></a></li>
+                            src="assets/img/p3.jpg" alt="개인 스스로 작품"></a></li>
                 <li class="col motion position-relative"><a href="#"><img class="w-100 h-100 object-fit-cover"
-                            src="/jfs/assets/img/p4.jpg" alt="준비중..."></a></li>
+                            src="assets/img/p4.jpg" alt="준비중..."></a></li>
             </ul>
             <div class="text-center py-5"><button type="button" id="shadow"
-                    class="btn btn-outline-danger px-4 rounded-1">더보기</button>
+                    class="btn btn-danger px-4 rounded-1 position-relative">프로젝트 내용 보기</button>
             </div>
         </div><!-- .container -->
     </div><!-- #work -->
@@ -168,7 +168,7 @@
                                 required></textarea>
                         </div>
                         <div class="frm-btn row justify-content-end mt-2"><button id="btnForm" type="submit"
-                                class="btn btn-secondary px-3 rounded-1 col-4"><i
+                                class="btn btn-dark px-3 rounded-1 col-4"><i
                                     class="fa-solid fa-paper-plane me-2"></i>메시지 보내기</button>
                         </div>
                     </form>
