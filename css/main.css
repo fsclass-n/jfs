@@ -70,6 +70,20 @@
     text-shadow: 1px 1px 5px red, 0 0 25px red, 0 0 35px red;
 }
 
+/* 내비게이션 버튼 클릭하여 섹션 이동 시
+섹션의 제목 영역이 헤더에 가려지는 현상 해결! */
+#counter {
+    /* 카운터와 #work 섹션 사이 벌어진(흰색) 부분 해결! */
+    transform: translateY(56px);
+}
+
+#about::before, #work::before, #contact::before {
+    display: block;
+    content: '';
+    /* ::before 높이를 헤더의 높이 만큼 지정한다. */
+    height: 56px;
+}
+
 /* 나의 사진 */
 .myimg {
     width: 425px;
