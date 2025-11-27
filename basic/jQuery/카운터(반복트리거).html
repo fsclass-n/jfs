@@ -33,6 +33,9 @@
         .counter.active {
             opacity: 1;
         }
+        span {
+            display: block;
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
@@ -46,10 +49,18 @@
 
     <section>
         <div id="counters">
-            <div class="counter" data-target="3">0</div>
-            <div class="counter" data-target="5">0</div>
-            <div class="counter" data-target="20">0</div>
-            <div class="counter" data-target="7">0</div>
+            <div>
+                <div class="counter" data-target="3">0</div>+<span>내용</span>
+            </div>
+            <div>
+                <div class="counter" data-target="5">0</div>+<span>내용</span>
+            </div>
+            <div>
+                <div class="counter" data-target="20">0</div>+<span>내용</span>
+            </div>
+            <div>
+                <div class="counter" data-target="7">0</div>+<span>내용</span>
+            </div>
         </div>
     </section>
 

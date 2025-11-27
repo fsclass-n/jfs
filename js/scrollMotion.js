@@ -1,34 +1,30 @@
 $(window).scroll(function () {
-    //변수 선언
     const windowHeight = $(window).height();
     let windowScrollTop = $(window).scrollTop();
-    const speed = 1000,
-        easing = "easeOutExpo",
-        pos = 0,
-        offset = 2.5;
+    const easing = "easeOutBack", pos = 0;
 
-    // 오른쪽 상단에 스크롤 양과 창 높이 값 출력
-    // console.log(windowScrollTop + " , " + windowHeight);
+    $(".motion").each(function (i, el) {
+        // position(): 포지션이 지정된 가장 가까운 조상 요소를 기준으로 지정한다.
+        const elementTop = $(el).position().top;
+        let offset1, offset2, speed;
 
-    if (windowScrollTop > windowHeight * offset) {
-        //참일 경우
-        // i는 0, 1, 2, 3
-        for (let i = 0; i < 4; i++) {
-            $(".motion")
-                .eq(i)
-                .stop()
-                .animate(
-                    { top: pos, opacity: 1 },
-                    (speed * (i + 1)) / 2,
-                    easing
-                );
+        if (i < 3) {
+            offset1 = 800;
+            offset2 = 600;
+            speed = 1000;
+        } else {
+            offset1 = 1800;
+            offset2 = 600;
+            speed = 400;
         }
-    } else {
-        //거짓일 경우
-        $(".motion")
-            .stop()
-            .animate({ top: pos + 600, opacity: 0 }, speed, easing);
-    }
+
+        // console.log(elementTop);
+        if (windowScrollTop > elementTop - windowHeight + offset1) {
+            $(el).stop().animate({ top: pos, opacity: 1 },(speed * (i + 1)) / 2, easing);
+        } else {
+            $(el).stop().animate({ top: pos + offset2, opacity: 0 }, speed, easing);
+        }
+    });
 
     // 창의 스크롤 양이 0보다 크면
     if (windowScrollTop > 0) {
