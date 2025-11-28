@@ -108,6 +108,12 @@
     height: 56px;
 }
 
+/* 프로필 소개 문단 */
+.basic p {
+    text-align: justify;
+    word-break: break-all;
+}
+
 /* 나의 사진 */
 .myimg {
     width: 425px;
@@ -127,7 +133,7 @@
 
 /* 카운터 */
 .counter {
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.5s;
 }
 .counter::after {
@@ -137,6 +143,13 @@
 .counter.active {
     opacity: 1;
 }
+
+/* 작품 크기 */
+.portfolio li {
+    /* aspect-ratio: 가로/세로; */
+    aspect-ratio: 9/6;
+}
+
 
 /* 맵 */
 .map {
@@ -157,5 +170,5 @@ textarea {
     resize: none;
 }
 #btnForm {
-    width: 28%;
+    width: auto;
 }

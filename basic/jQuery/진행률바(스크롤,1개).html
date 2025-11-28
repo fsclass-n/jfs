@@ -52,7 +52,7 @@
     <section id="progress-section">
         <div class="progress-wrap">
             <div class="progress-bar"></div>
-            <span class="percent">0%</span>
+            <span class="percent" data-target="85">0%</span>
         </div>
     </section>
 
@@ -63,7 +63,7 @@
 
             function runProgressBar() {
                 let current = 0;
-                const target = 100;
+                const target = $('.percent').attr('data-target');
                 const speed = 20;
 
                 let timer = setInterval(function () {
@@ -82,6 +82,7 @@
                 const windowHeight = $(window).height();
                 const sectionTop = $("#progress-section").offset().top;
 
+                // animated이 false -> !animated true
                 if (!animated && scrollTop + windowHeight > sectionTop + 20) {
                     animated = true;
                     runProgressBar();

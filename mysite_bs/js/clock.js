@@ -13,7 +13,7 @@ function digitalClock() {
     // let: 재선언 불가, 재할당 가능
     // new Date(): 날짜와 시간 객체(인스턴스)
     const date = new Date();
-    console.log(new Date()); // Tue Nov 04 2025 14:26:07 GMT+0900 (한국 표준시)
+    // console.log(new Date()); // Tue Nov 04 2025 14:26:07 GMT+0900 (한국 표준시)
     // document: 문서 객체
     // getElementById('아이디'): 메서드(매개변수, ...)
     const clockBox = document.getElementById("clock");
