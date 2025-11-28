@@ -11,6 +11,9 @@ $(function () {
             if (count >= target) {
                 clearInterval(counterInterval);
             }
+            // 바 증가
+            $counter.parent().css("width", count + "%");
+            // 숫자(퍼센트) 증가
             $counter.text(count);
         }, speed);
     } // function runCounter($counter) end
@@ -18,7 +21,7 @@ $(function () {
     function checkScroll() {
         const scrollTop = $(window).scrollTop(),
             windowHeight = $(window).height(),
-            elementTop = $("#counters").offset().top;
+            elementTop = $(".counters").offset().top;
 
         $(".counter").each(function () {
             const $this = $(this);
