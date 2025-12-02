@@ -150,39 +150,44 @@
     <script src="js/data.js"></script>
 
     <script>
-        // datas.forEach(함수);
-        // datas.forEach(function(){});
-        // datas.forEach(([요소], [인덱스], [배열])=>{});
-        datas.forEach(data=>{
+        // ${data.screenTypes[0] === undefined ? "" : `<img src="${data.screenTypes[0]}" alt="mega mx4d">`}
+        // ${data.screenTypes[1] === undefined ? "" : `<img src="${data.screenTypes[1]}" alt="dolby cinema">`}
+        // ${data.screenTypes[2] === undefined ? "" : `<img src="${data.screenTypes[2]}" alt="dolby atmos">`}
 
+        
+        // datas.forEach(([요소], [인덱스], [배열])=>{});
+        // datas.forEach(data=>{
+        // $(datas).each(([인덱스], [요소])=>{});
+        $(datas).each((idx, data)=>{
+            // datas.map(([요소], [인덱스], [배열])=>{});
+            const screenImgs = data.screenTypes.map(ele=>`<img src="${ele}" alt="Screen Types">`).join('');
+            
             const card = `<div class="box_office_card">
             <div class="inner">
                 <div class="front">
                     <span class="rank">${data.rank}</span>
                     <div class="poster">
-                        <img src="${data.poster}" alt="쥬토피아">
+                        <img src="${data.poster}" alt="${data.title}">
                     </div>
-                    <div class="screen_type">
-                        <img src="${}" alt="mega mx4d">
-                        <img src="${}" alt="dolby cinema">
-                        <img src="${}" alt="dolby atmos">
-                    </div>
+                    <div class="screen_type">${screenImgs}</div>
                     <div class="grade">
-                        <img src="${}" alt="Grade All">
+                        <img src="${data.grade}" alt="Grade ${data.age}">
                     </div>
                 </div><!-- //.front -->
                 <div class="back">
-                    <p>${}</p>
-                    <div class="score">관람평<span>${}</span></div>
+                    <p>${data.description}</p>
+                    <div class="score">관람평<span>${data.score}</span></div>
                 </div><!-- //.back -->
             </div><!-- //.inner -->
             <!-- btn -->
             <div class="btn">
-                <button type="button" class="like"><i class="fa-regular fa-heart"></i>3.6k</button>
+                <button type="button" class="like"><i class="fa-regular fa-heart"></i>${data.like}</button>
                 <a href="" class="reservation_link">예매</a>
             </div>
         </div>`
     
+        $('.box_office').append(card);
+
         }); // forEach()
     </script>
 </body>
