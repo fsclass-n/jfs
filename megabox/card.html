@@ -4,16 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEET PLAY SHARE, 메가박스</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        .box_office_card {
+            width: 245px;
+        }
+        .front {
+            position: relative;
+        }
+        .poster {
+            height: 352px;
+        }
+        .rank {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 300;
+            font-style: italic;
+            text-shadow: 2px 2px 2px #000;
+        }
+        .btn {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        /* 좋아요! 버튼 */
+        .like {
+            color: #fff;
+            background: transparent;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            width: 100px;
+            /* height: 34px; */
+        }
+        .like i {
+            margin-right: 4px;
+        }
+        .reservation_link {
+            width: 100%;
+            background: #037b94;
+            border-radius: 5px;
+            text-align: center;
+            padding: 6px;
+            /* line-height: 34px; */
+        }
+    </style>
 </head>
 <body>
     <!-- Card UI(카드 UI) -->
-    <div id="box_office_ard">
-        <span class="rank">1</span>
-        <div class="poster">
-            <img src="images/YiSbqEf6OvFcDoLoQCipDojOHqMCwKG4_420.jpg" alt="쥬토피아">
+    <div class="box_office_card">
+        <div class="front">
+            <span class="rank">1</span>
+            <div class="poster">
+                <img src="images/YiSbqEf6OvFcDoLoQCipDojOHqMCwKG4_420.jpg" alt="쥬토피아">
+            </div>
         </div>
-        <span class="like"><i class="fa-regular fa-heart"></i>3.6k</span>
-        <a href="" class="reservation_link">예매</a>
+        <div class="btn">
+            <button type="button" class="like"><i class="fa-regular fa-heart"></i>3.6k</button>
+            <a href="" class="reservation_link">예매</a>
+        </div>
     </div>
 </body>
 </html>
