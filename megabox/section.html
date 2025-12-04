@@ -93,6 +93,13 @@
         .mouse span {
             display: inline-block;
             width: 16px;
+            animation: mouse 2s infinite ease-in-out;
+        }
+        @keyframes mouse {
+            0% {transform: translateY(0);}
+            40% {transform: translateY(20px);}
+            80% {transform: translateY(20px);}
+            100% {transform: translateY(0px);}
         }
 
         /* Box Office Card UI */
