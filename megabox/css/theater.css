@@ -1,0 +1,52 @@
+@charset "utf-8";
+@import url(common.css);
+
+/* 헤더 */
+#header .sub {
+    background: #339EB2;
+}
+
+#section {
+    background: #fff;
+    padding-bottom: 150px;
+}
+
+#section .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#section h2 {
+    padding: 50px 0;
+    font-size: 2rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+#section img {
+    height: 28px;
+    object-fit: contain;
+}
+
+.special {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+.special:nth-of-type(2) {
+    margin: 100px 0;
+}
+.special div, .special h3 {
+    height: 260px;
+    border-radius: 12px;
+    background: yellow;
+}
+.special:nth-of-type(1) h3 {
+    background: #000;
+}
+.special:nth-of-type(2) h3 {
+    background: #8E6916;
+}
+.special:nth-of-type(3) h3 {
+    background: #390081;
+}
