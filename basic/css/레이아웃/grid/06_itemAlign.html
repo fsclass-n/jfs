@@ -8,45 +8,38 @@
     <style>
         /* 
             그리드 아이템
-                grid-column-start
+                1. grid-column-start
                     - 아이템의 시작 열 번호 지정
-                grid-column-end
+                2. grid-column-end
                     - 아이템의 끝 열 번호 지정
-                grid-column: start / span 숫자;
+                3. grid-column: start / span 숫자;
 
-                grid-row-start
+                4. grid-row-start
                     - 아이템의 시작 행 번호 지정
-                grid-row-end
+                5. grid-row-end
                     - 아이템의 끝 행 번호 지정
-                grid-row: start end;
+                6. grid-row: start end;
 
-                위 속성들의 속성 값
-                    - auto(기본값), 숫자
+                    위 속성들의 속성 값은
+                        - auto(기본값), 숫자
 
-                grid-area: 이름;
-
-                justify-self
+                1. justify-self
                     - 셀 내의 수평 정렬 지정
-                    - 기본값: auto
-                        normal
-                        stretch
-                        start
-                        left
-                        center
-                        end
-                        right
-                align-self
+                2. align-self
                     - 셀 내의 수직 정렬 지정
-                place-self 
-                    - align-self 그리고 justify-self
+                3. place-self: <align> <justify>;
+                
+                    위 속성들의 속성 값은
+                        - stretch(기본값), start, center, end
 
+                grid-area: 이름;                        
 
             그리드 컨테이너
                 grid-template-areas: '이름 이름 이름';
         */
         .container {
             display: grid; /* dg */
-            grid-template-columns: repeat(5, auto);
+            grid-template-columns: repeat(1, auto);
             gap: 5px; /* g5 */
             background-color: dodgerblue;
             padding: 5px;
@@ -61,11 +54,11 @@
             text-align: center;
         }
 
-        .item1 { justify-items: auto; } /* jia */
-        .item2 { justify-items: normal; } /* ji */
-        .item3 { justify-items: start; } /* ji */
-        .item4 { justify-items: end; } /* jie */
-        .item5 { justify-items: center; } /* jic */
+        .item1 { justify-self: auto; } /* jsa */
+        .item2 { justify-self: stretch; } /* jsse */
+        .item3 { justify-self: start; } /* js */
+        .item4 { justify-self: end; } /* jse */
+        .item5 { justify-self: center; } /* jsc */
     </style>
 </head>
 
