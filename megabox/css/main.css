@@ -25,8 +25,8 @@
 /* top menu */
 #header .top_link {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* justify-content: space-between; */
+    grid-template-columns: auto auto;
+    justify-content: space-between;
 }
 
 #header .top_link a {
