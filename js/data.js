@@ -21,12 +21,12 @@ const datas = [
     },
     {
         rank: 3,
-        poster: "https://www.dummyimage.com/400x600/000/fff&text=+preparing...",
-        title: "메가커피",
+        poster: "assets/img/project3_thumb.png",
+        title: "메가박스",
         task: "PE",
-        description: ["준비중..."],
-        worktime: "240H",
-        siteurl: "#"
+        description: ["UI/UX 클론 프로젝트", "적응형 웹 사이트", "메인과 서브 2장", "기술 스택: HTML + CSS + JS(jQuery)", "jQuery를 활용한 동적 데이터 렌더링", "카드 플립 애니메이션", "좋아요 버튼 인터랙션", "스크롤 감지에 따른 To-The-Top 버튼"],
+        worktime: "16H",
+        siteurl: "https://megabox-js.netlify.app"
     },
     {
         rank: 4,
