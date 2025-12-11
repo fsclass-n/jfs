@@ -17,7 +17,7 @@ $(datas).each((idx, data) => {
             <!-- btn -->
             <div class="btn">
                 <span class="worktype">${data.task}</span>
-                <a href="${data.siteurl}" class="btn btn-info text-white m-0 d-block text-center sitelink">사이트 바로가기</a>
+                <a href="${data.siteurl}" target="_blank" class="btn btn-info text-white m-0 d-block text-center sitelink">사이트 바로가기</a>
             </div>
         </div>`;
 

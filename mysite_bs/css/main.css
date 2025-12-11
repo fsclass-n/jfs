@@ -201,6 +201,11 @@
     width: 60px;
     line-height: 30px;
 }
+/* 작품 설명 */
+.back ul {
+    font-size: 0.8rem;
+    padding-left: 24px;
+}
 
 /* 사이트 바로가기 버튼 */
 .sitelink {
@@ -240,7 +245,7 @@
 
 .back {
     transform: rotateY(180deg);
-    padding: 24px;
+    padding: 24px 16px;
     color: #fff;
     background: rgb(0, 0, 0, 0.8);
     /* 뒷면 숨기기 */
