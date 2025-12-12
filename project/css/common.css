@@ -14,7 +14,8 @@
 :root {
     /* CSS의 변수 정의, CSS 변수는 :root에 정의한다. */
     /* :root 선택자는 html태그를 선택한다. */
-    --main-color: #9a8b86;
+    --main-color: #009132;
+    --main-color2: #FFC20D;
     --sub-color: #3E3A38;
     --white-color: #fff;
     --gray5: #555;
