@@ -3,10 +3,9 @@
 @import url(header.css);
 @import url(footer.css);
 
-
 /* typo */
 /* section1 area */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
 #sec1 {
     color: var(--white-color);
 }
@@ -24,10 +23,8 @@
     font-size: 17px;
 }
 #sec1 .counter div {
-    /* 부모 요소(#sec1)에서 지정한 글자색보다 자식 요소에 지정한 속성이 우선 적용된다. */
     color: var(--sub-color);
 }
-
 
 /* section2 area */
 
@@ -39,9 +36,9 @@
 
 .phone-number {
     font-family: "Noto Sans KR", sans-serif;
-    font-size: 24px; /* fz24 */
+    font-size: 24px;
     color: #0f2244;
-    font-weight: bold; /* fwb */
+    font-weight: bold;
 }
 
 /* section3 area */
@@ -84,7 +81,6 @@
     font-weight: var(--fwm);
 }
 
-
 .card-details p {
     /* p는 위아래 기본 마진이 있다. 폰트 크기의 1em */
     margin: 0;
@@ -95,14 +91,13 @@
 /* section common(공통) */
 .sec {
     position: relative;
-    /* vh: viewport height */
     height: 100vh;
 }
 .ele-center {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
 /* section1 area */
@@ -139,15 +134,18 @@
     /* height와 line-height가 같으면 텍스트가 수직 중앙 배치된다. 단, 한 줄 텍스트일때만 가능 */
     height: 44px;
     line-height: 44px; /* lh44px */
-    background-color: rgba(255, 217, 0, .6);
+    background-color: rgba(255, 217, 0, 0.6);
     border-radius: 20px; /* bdrr */
     margin: 10px;
+}
+#sec1 .counter li:nth-of-type(2) div {
+    background-color: rgba(0, 145, 50, 0.6);
+    color: #fff;
 }
 
 /* section2 area */
 #sec2 {
-    /* background-image: url(), url(), ... 앞에 쓴것이 위로 올라감 */
-    background: url(../assets/img/bg_percel.jpg) no-repeat 50%/1180px 351px, url(../assets/img/bg_section02.jpg) no-repeat 50%/cover;
+    background: url(../assets/img/bg_content.gif);
 }
 
 #sec2 .card-list {
@@ -159,14 +157,61 @@
 /* 배경색: bgc */
 .card-container {
     width: 340px;
-    background-color: #EDF5F7;
+    color: #fff;
     /* overflow: hidden; */
     /* margin: 20px; */
 }
+.card-container h3 {
+    color: #fff;
+    font-weight: normal;
+    margin: 50px 0 20px;
+}
+.card-container a {
+    color: #fff;
+}
+.card-container p:last-of-type {
+    margin-top: 16px;
+}
+.card-container:nth-of-type(3) h3 {
+    color: #333;
+}
+.card-container:nth-of-type(1) {
+    background-color: #01a5e2;
+    border-radius: 30px;
+    border-bottom-right-radius: 0px;
+}
+.card-container:nth-of-type(2) {
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: #ff8300;
+}
+.card-container:nth-of-type(3) {
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background-color: #fff;
+    color: #333;
+}
 
 .card-image-wrapper {
-    overflow: hidden; /* o */
+    height: 268px;
+    overflow: hidden;
 }
+.card-container:nth-of-type(1) .card-image-wrapper {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.card-container:nth-of-type(2) .card-image-wrapper {
+    border-top-left-radius: 30px;
+}
+.card-container:nth-of-type(3) .card-image-wrapper {
+    background: #ffce32;
+    border-top-right-radius: 30px;
+    padding: 48px 24px;
+}
+.card-container:nth-of-type(3) a {
+    color: #333;
+}
+
 .card-image-wrapper img {
     transition: 0.3s; /* trs, 0.3초 */
 }
@@ -184,7 +229,7 @@
 
 /* 배지+좋아요 */
 .card-header {
-    padding-left: 45px; /* pl45 */
+    padding-left: 45px;
 }
 
 .card-header span {
@@ -193,37 +238,31 @@
 }
 
 .tag-badge {
-    display: inline-block; /* dib */
-    width: 70px; /* w70 */
-    height: 38px; /* h38 */
-    line-height: 38px; /* lh38px */
-    text-align: center; /* tac */
-    background-color: #0f2244; /* bgc */
-    color: #fff; /* c */
+    display: inline-block;
+    padding: 4px 16px;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 50px 0 50px 50px;
 }
-
-/* 좋아요 하트 */
-.like-button {
-    /* 요소의 크기는 지정하면서 줄은 바뀌지 않는다. */
-    display: inline-block; /* dib */
-    width: 55px; /* w55 */
-    height: 55px; /* h55 */
-    line-height: 55px; /* 줄간격, lh55px */
-    text-align: center; /* 텍스트 좌우 정렬, tac */
-    /* padding: 16px 15px 24px; */
-    border-radius: 50%; /* bdrs50p */
-    margin-top: 20px;
-    margin-left: 145px;
-    background-color: #B1B4B3; /* bgc */
-}
-.like-button i {
-    color: #fff; /* 글자 색, c */
-    font-size: 20px; /* 글자 크기, fz20 */
+.card-container:nth-of-type(3) .tag-badge {
+    border-color: rgba(150, 148, 148, 0.5);
 }
 
 /* 카드 UI 정보 */
 .card-body {
-    margin: 0 45px 120px; /* m0-45-120 */
+    margin: 0 45px 120px;
+}
+
+/* 최신글 */
+.latest li {
+    padding: 8px 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 1px dotted #333;
+}
+.latest li a:hover {
+    text-decoration: underline;
 }
 
 /* section3 area */
@@ -234,7 +273,8 @@
             - 웹사이트나 게임 등에서 배경 레이어는 느리게, 전경 레이어는 빠르게 움직여 입체감과 깊이감을 주는 디자인 기법입니다. 
     */
     background-attachment: fixed; /* bga */
-    background: url(../assets/img/2025_autumn_pick_bg_250916.jpg) no-repeat 50%/cover fixed;
+    background: url(../assets/img/bg.jpg) no-repeat 50% /
+        cover fixed;
 }
 #sec3 .intro {
     position: absolute;
