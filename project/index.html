@@ -5,26 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="./favicon.png">
-  <!-- 외부 스타일: link 태그로 css파일을 연결 -->
-  <!-- <link rel="stylesheet" href="style.css"> -->
-  <!-- <link rel="stylesheet" href="common.css"> -->
   <link rel="stylesheet" href="css/main.css">
   <title>SUBWAY 써브웨이</title>
 </head>
 
 <body>
-  <!-- 타깃사이트: https://www.hanatour.com/ -->
-  <!-- 밴치마킹(Benchmarking) -->
-  <!-- 참조사이트:
-          https://composecoffee.com/
-          https://www.honorsville.co.kr/
-          https://www.starbucks.co.kr/index.do
-          https://www.farmhannong.com/kor/main/index.do
-  -->
+    <!-- 타깃: https://www.subway.co.kr/ -->
+    <!-- 밴치마킹: https://www.starbucks.co.kr/whats_new/notice_list.do -->
   <header id="header">
     <div class="container">
       <!-- 로고 -->
-      <!-- h1.logo>a[href=index.html] -->
       <h1 class="logo"><a href="index.html"><img src="./assets/img/logo_w.png" alt="써브웨이로 이동하기"></a></h1>
       <!-- 내비게이션: GNB -->
       <nav id="gnb">
@@ -49,7 +39,7 @@
           <li><a href="#">새소식</a>
             <ul class="sub">
               <li><a href="#">이벤트·프로모션</a></li>
-              <li><a href="#">뉴스·공지사항</a></li>
+              <li><a href="./sub/notice.html">뉴스·공지사항</a></li>
               <li><a href="#">광고영상</a></li>
             </ul>
           </li>
@@ -78,16 +68,15 @@
         </ul>
       </nav>
       <div class="util">
-        <a href="#">SNS</a>
-        <a href="#">로그인</a>
+        <!-- sns -->
+        <a href="#" class="youtube">SNS</a>
+        <a href="./sub/login.html">로그인</a>
         <a href="#">회원가입</a>
       </div>
     </div><!-- .container -->
   </header>
 
   <!-- section(본문) area -->
-  <!-- https://composecoffee.com/ -->
-  <!-- #div1 -->
   <div id="sec1" class="sec">
     <div class="vid">
       <video autoplay muted loop>
@@ -100,17 +89,17 @@
         <p>우리는 더 좋은 써브웨이를 위해 매일 노력합니다.</p>
         <ul class="counter">
           <li>
-            <span>11</span>
+            <span>60</span>
             <span>년</span>
             <div>함께한 시간</div>
           </li>
           <li>
-            <span>3047</span>
+            <span>656</span>
             <span>개</span>
             <div>가맹점 수</div>
           </li>
           <li>
-            <span>17,589,812</span>
+            <span>3,589,812</span>
             <span>명</span>
             <div>써브웨이 (App 누적 가입자)</div>
           </li>
@@ -130,20 +119,19 @@
           <!-- card-image-wrapper -->
           <div class="card-image-wrapper">
             <!-- https~, http~ : 절대주소 -->
-            <img src="./assets/img/bg_utilization.png" alt="써브웨이를 제대로 즐기는 방법"
-              class="card-image" />
+            <img src="./assets/img/bg_utilization.png" alt="써브웨이를 제대로 즐기는 방법" class="card-image" />
           </div>
           <!-- .card-image-wrapper -->
           <!-- card-content -->
           <div class="card-content">
-            <div class="card-header">
-              <a href="#" class="tag-badge">이용방법</a>
-            </div>
             <div class="card-body">
               <h3 class="card-title">써브웨이를<br />제대로 즐기는 방법</h3>
               <div class="card-details">
                 <p>메뉴를 고르세요. 샌드위치(15cm 또는 30cm)와 샐러드 중 선택 가능합니다.</p>
                 <p>이용 방법을 누르면 자세한 사항을 확인할 수 있습니다.</p>
+              </div>
+              <div class="card-link">
+                <a href="#" class="tag-badge">이용방법</a>
               </div>
               <!-- .card-contact -->
             </div>
@@ -159,14 +147,14 @@
           <!-- .card-image-wrapper -->
           <!-- card-content -->
           <div class="card-content">
-            <div class="card-header">
-              <a href="#" class="tag-badge">서브웨이 역사</a>
-            </div>
             <div class="card-body">
               <h3 class="card-title">50년 역사를 가진<br />No.1 프랜차이즈의 성장기</h3>
               <div class="card-details">
                 <p>1965년 17세 사업가, 프레드 델루카 Pete’s Super Submarines 오픈 (미국, 코네티컷) ...</p>
                 <p>써브웨이 역사가 궁금하시면 "서브웨이 역사" 버튼을 눌려주세요.</p>
+              </div>
+              <div class="card-link">
+                <a href="#" class="tag-badge">서브웨이 역사</a>
               </div>
               <!-- .card-contact -->
             </div>
@@ -187,9 +175,6 @@
           <!-- .card-image-wrapper -->
           <!-- card-content -->
           <div class="card-content">
-            <div class="card-header">
-              <a href="#" class="tag-badge">What's New</a>
-            </div>
             <div class="card-body">
               <h3 class="card-title">
                 써브웨이의 다양한 소식을<br>
@@ -198,6 +183,9 @@
               <div class="card-details">
                 <p>현재 총 195건의 게시글이 있습니다.</p>
                 <p>써브웨이의 최신 정보를 확인하시려면 "What's New" 버튼을 눌려주세요.</p>
+              </div>
+              <div class="card-link">
+                <a href="#" class="tag-badge">What's New</a>
               </div>
               <!-- .card-contact -->
             </div>
@@ -233,17 +221,26 @@
     <!-- inquiry: 문의 -->
     <div class="inquiry">
       <div class="inner">
-        <h2>고객문의</h2>
-        <div class="con-area">
-          <div class="tel-area">
-            <p>더 궁금한 게 있으신가요?</p>
-            <a href="tel:1644-0901"><i class="fa-solid fa-phone"></i>1644-0901</a>
-          </div>
-          <div class="con-btn">
-            <a href="#" class="faq-btn"><span>자주 묻는 질문</span></a>
-            <a href="#" class="consult-btn"><span>1:1 문의</span></a>
-          </div>
-        </div><!-- .con-area -->
+          <a href="#">
+            <div>아이콘1</div>
+            <strong>프랜차이즈</strong>
+            <span>개설절차/투자비용 정보</span>
+          </a>
+          <a href="#">
+            <div>아이콘2</div>
+            <strong>지사안내</strong>
+            <span>수도권/지방 지사정보</span>
+          </a>
+          <a href="#">
+            <div>아이콘3</div>
+            <strong>광고영상</strong>
+            <span>TV광고/동영상</span>
+          </a>
+          <a href="#">
+            <div>아이콘4</div>
+            <strong>고객문의</strong>
+            <span>자주하는 질문/1:1문의</span>
+          </a>
       </div><!-- .inner -->
     </div><!-- .inquiry -->
     <!-- info: 정보 -->
@@ -254,30 +251,19 @@
             <!-- bnb: bottom navigation bar -->
             <ul class="bnb">
               <li><a href="#">이용약관</a></li>
-              <li><a href="#">개인정보처리방침</a></li>
-              <li><a href="#">썹 카드&nbsp; 썹 포인트 이용약관</a></li>
+              <li><a href="#" class="person">개인정보처리방침</a></li>
+              <li><a href="#">썹 카드 &amp; 썹 포인트 이용약관</a></li>
               <li><a href="#">점주관리자</a></li>
             </ul>
             <ul class="sns">
-              <li><a href="https://www.youtube.com/channel/UCyR3G-Lcsq2yGI388SfdghQ">팜한농<img
-                    src="./assets/img/footer_youtube_icon.png" alt="팜한농 유튜브"></a></li>
-              <li><a href="https://www.youtube.com/@NongDam00">농담<img src="./assets/img/footer_youtube_icon.png"
-                    alt="팜한농 유튜브"></a></li>
-              <li><a href="https://pf.kakao.com/_KsuVxb"><img src="./assets/img/footer_kakao_icon.png"
-                    alt="팜한농 카카오 채널"></a></li>
-              <li><a href="https://blog.naver.com/fhnblog"><img src="./assets/img/footer_naverblog_icon.png"
-                    alt="팜한농 블로그"></a></li>
+              <li><a href="#">인스타그램</a></li>
+              <li><a href="#">페이스북</a></li>
             </ul>
           </div>
           <div class="com-info">
-            <p>서울시 서초구 강남대로 535 프린스빌딩 15층</p>
-            <ul>
-              <li>대표 : INSOO CHO(인수조)</li>
-              <li>전화: <a href="tel:02-797-5036">02-797-5036</a></li>
-              <li>사업자등록번호 : 101-84-04143</li>
-            </ul>
+            <p>서울시 서초구 강남대로 535 프린스빌딩 15층 대표 : INSOO CHO(인수조) 전화: <a href="tel:02-797-5036">02-797-5036</a> 사업자등록번호 : 101-84-04143</p>
           </div>
-          <p>SUBWAY® is a Registered Trademark of Subway IP LLC. © 2021 Subway IP LLC. All Rights Reserved.</p>
+          <p>SUBWAY® is a Registered Trademark of Subway IP LLC. © 2026 Subway IP LLC. All Rights Reserved.</p>
         </div>
         <div class="fs">관련사이트 열기</div>
       </div><!-- .inner -->

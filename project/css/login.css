@@ -17,7 +17,7 @@ i, h1 {
 .login_container {
     position: relative;
     height: 100vh;
-    background: url(./../assets/img/loginBg.jpg) no-repeat 50% 50%/cover;
+    background: url(./../assets/img/bg.jpg) no-repeat 50% 50%/cover;
 }
 .login_inner {
     position: absolute;

@@ -86,7 +86,6 @@
     line-height: 2;
     font-weight: 400;
     margin-top: 45px;
-    background: #fff;
 }
 /* a태그 글자색은 반드시 a태그에 직접 지정한다. */
 #header .sub a {
@@ -96,3 +95,20 @@
     text-decoration: underline;
 }
 /* SNS,로그인,회원가입 */
+#header .util a {
+    vertical-align: middle;
+    margin-left: 16px;
+}
+#header .youtube:hover {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: url(../assets/img/btn_youtube.png);
+    text-indent: -9999px;
+}
+#header .util a:nth-of-type(2)::before {
+    display: inline-block;
+    content: "·";
+    margin-right: 16px;
+    transform:scale(2)
+}

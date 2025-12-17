@@ -221,28 +221,24 @@
 }
 
 .card-content {
+    position: relative;
     /* 마진 겹침 해결!
         -> 마진이 부모 바깥으로 지정되는 것을 방지
      */
     display: flow-root;
 }
 
-/* 배지+좋아요 */
-.card-header {
-    padding-left: 45px;
-}
-
-.card-header span {
-    /* 인라인 요소를 위로 맞춤 */
-    vertical-align: top; /* vat */
-}
-
+/* 배지+링크 */
 .tag-badge {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
     display: inline-block;
     padding: 4px 16px;
     text-align: center;
     border: 2px solid rgba(255, 255, 255, .5);
-    border-radius: 50px 0 50px 50px;
+    border-radius: 50px;
 }
 .card-container:nth-of-type(3) .tag-badge {
     border-color: rgba(150, 148, 148, 0.5);
