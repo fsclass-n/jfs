@@ -20,7 +20,7 @@ console.log(str.charAt(-1));// "" (음수는 무시)
 let text ="JavaScript";
 console.log(text.length); // 10
 
-let msg ="Hello   World";
+let msg ="Hello World";
 console.log(msg.length); // 11 (공백 포함)
 
 "".length; // 0
@@ -45,7 +45,123 @@ t = "apple apple apple";
 console.log(t.replace(/apple/g, "banana")); // banana banana banana
 
 // 0~9와 .를 제외한 문자는 모두 공백으로 대치
-"3.6k".replace(/[^0-9.]/g, '') // "3.6"
-"1,234명".replace(/[^0-9.]/g, '') // "1234"
+console.log("3.6k".replace(/[^0-9.]/g, '')); // "3.6"
+console.log("1,234명".replace(/[^0-9.]/g, '')); // "1234"
 
-String(12345).replace("234", "000");  // "10005"
+console.log(String(12345).replace("234", "000"));  // "10005"
+
+// 문자열.substring(시작인덱스, [끝인덱스])
+// - 문자열에서 지정한 인덱스 구간의 문자열을 추출하여 새로운 문자열로 반환
+// -> 시작인덱스 ~ 끝인덱스-1
+// -> 시작인덱스 부터 끝까지
+
+
+text ="JavaScript";
+
+console.log(text.substring(0,4));// "Java"
+console.log(text.substring(4));// "Script"
+console.log(text.substring(4,10));// "Script"
+
+// 인덱스 순서 자동 교환
+console.log(text.substring(10,4));// "Script"
+
+// 음수는 0으로 처리
+console.log(text.substring(-3,4));// "Java"
+
+
+// 문자열.indexOf(검색값, 인덱스)
+// - 문자열 또는 배열에서 특정 값이 처음으로 등장하는 위치(index)를 반환
+
+text ="JavaScript";
+
+console.log(text.indexOf("S"));// 4
+console.log(text.indexOf("Script"));// 4
+
+// 찾는 값이 없으면 -1
+// 대소문자 구분
+console.log(text.indexOf("script"));// -1 
+// 2번 인덱스부터 검색
+console.log(text.indexOf("a", 2));// 3
+
+// 문자열.includes(검색할_문자, [시작_위치])
+// - 문자열이나 배열 안에 특정 값이 포함되어 있으면 true, 아니면 false
+
+text = "Hello World";
+
+console.log(text.includes("World")); // true
+// 대소문자 구분
+console.log(text.includes("world")); // false 
+// 1번째 문자부터 검색
+console.log(text.includes("Hello", 1)); // false
+
+
+// 문자열.split(구분자, [배열항목최대수])
+// 문자열을 지정한 구분자(separator)를 기준으로 나누어 배열로 변환
+
+console.log("apple,banana,orange".split(","));
+// ["apple", "banana", "orange"]
+
+console.log("2025-12-16".split("-"));
+// ["2025", "12", "16"]
+
+console.log("hello world".split(" "));
+// ["hello", "world"]
+
+console.log("abc".split(""));
+// ["a", "b", "c"]
+
+console.log("a-b-c-d".split("-",2));
+// ["a", "b"]
+
+
+
+// length
+console.log("hello".length);              // 5
+
+// at(인덱스)
+// 인덱스를 음수로 지정하면 오른쪽에서 부터
+console.log("apple".at(-1));              // "e"
+
+// slice()
+// 인덱스를 음수로 지정하면 오른쪽에서 부터
+console.log("abcdef".slice(-3));          // "def"
+
+// lastIndexOf()
+// 끝에서 시작방향으로 찾는다.
+console.log("banana".lastIndexOf("na"));  // 4
+
+// startsWith()
+console.log("hello".startsWith("he"));    // true
+
+// endsWith()
+console.log("hello".endsWith("lo"));      // true
+
+// toUpperCase()
+console.log("Hello".toUpperCase());       // "HELLO"
+
+// toLowerCase()
+console.log("Hello".toLowerCase());       // "hello"
+
+// replaceAll()
+console.log("a-a-a".replaceAll("a","b")); // "b-b-b"
+
+// trim()
+// 앞,뒤 공백 제거
+console.log("  hi  ".trim());             // "hi"
+
+// trimStart()
+// 시작(왼쪽) 공백 제거
+console.log("  hi".trimStart());          // "hi"
+
+// trimEnd()
+// 끝(오른쪽) 공백 제거
+console.log("hi  ".trimEnd());            // "hi"
+
+// 문자열.repeat(숫자)
+// 문장열을 숫자 만큼 반복
+console.log("ha".repeat(3));              // "hahaha"
+
+// 문자열.concat("문자열")
+// 문자열 결합 연산자 +와 같다.
+// "a" + "b" -> "ab"
+console.log("a".concat("b"));             // "ab"
